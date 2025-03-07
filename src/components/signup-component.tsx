@@ -10,6 +10,7 @@ import LoginImage from "../assets/img/image.png";
 import MaxWidthWrapper from "./max-width-wrapper";
 import { IoMailUnreadOutline } from "react-icons/io5";
 import { z } from "zod";
+import { CheckCircle2 } from "lucide-react";
 
 const Signupcomponent = () => {
   const [eye, setEye] = useState(true);
@@ -19,6 +20,7 @@ const Signupcomponent = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState<{ email?: string; password?: string; confirmPassword?: string }>({}); // Object to store field-specific errors
   const navigate = useNavigate();
+  const [showNotification, setShowNotification] = useState(false);
 
   // Define the Zod schema for validation
   const signupSchema = z
@@ -58,14 +60,19 @@ const Signupcomponent = () => {
       password,
       confirmPassword,
     };
-
+  
     try {
       signupSchema.parse(formData); // Validate using Zod
       setErrors({}); // Clear all errors
       console.log("Form is valid:", formData);
-
-      // Redirect to the login page after successful validation
-      navigate("/login");
+  
+      // Show notification
+      setShowNotification(true);
+  
+      // Redirect to the login page after a short delay
+      setTimeout(() => {
+        navigate("/login");
+      }, 1000); // Adjust the delay as needed
     } catch (err) {
       if (err instanceof z.ZodError) {
         // Convert Zod errors into a field-specific error object
@@ -102,12 +109,12 @@ const Signupcomponent = () => {
               </div>
 
               <div className="w-full">
-                <div className="flex items-center gap-3 text-xl mb-2 border rounded-xl w-full py-3 border-Gray px-4">
+                <div className="flex items-center gap-3 text-xl mb-2 border rounded-xl py-3 border-Gray px-4">
                   <IoMailUnreadOutline />
                   <input
                     type="email"
                     placeholder="Email"
-                    className="font-smbold font-myFont outline-none"
+                    className="font-smbold font-myFont outline-none w-full"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -167,6 +174,13 @@ const Signupcomponent = () => {
           </div>
         </div>
       </MaxWidthWrapper>
+         {/* Success Notification */}
+         {showNotification && (
+        <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 transition-opacity duration-300">
+          <CheckCircle2 size={20} />
+          <span>SignUp Successful!</span>
+        </div>
+      )}
     </div>
   );
 };
