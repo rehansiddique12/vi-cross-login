@@ -54,7 +54,7 @@ const LoginComponent = () => {
       // Hide notification after 3 seconds
       setTimeout(() => {
         setShowNotification(false);
-        navigate("/"); // Redirect after notification disappears
+        navigate("/tradecomp"); // Redirect after notification disappears
       }, 3000);
       
     } catch (err) {
@@ -97,7 +97,7 @@ const LoginComponent = () => {
                   <input
                     type="email"
                     placeholder="Email"
-                    className="font-smbold font-myFont outline-none"
+                    className="font-smbold font-myFont outline-none w-full"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />

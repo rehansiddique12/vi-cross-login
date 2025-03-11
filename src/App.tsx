@@ -6,6 +6,8 @@ import Forget from "./pages/forget"
 import Confirm from "./pages/confirm"
 import { Route, Routes } from "react-router-dom"
 
+import Trades from "./pages/trades"
+
 
 
 const App = () => {
@@ -17,6 +19,7 @@ const App = () => {
       <Route path="/forget" element={<Forget/>}/>
       <Route path="/otp" element={<Otp/>}/>
       <Route path="/Confirmpassword" element={<Confirm/>}/>
+      <Route path="/tradecomp" element={<Trades/>}/>
     </Routes>
   )
 }
