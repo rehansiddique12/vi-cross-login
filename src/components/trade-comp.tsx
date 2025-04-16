@@ -1,11 +1,11 @@
 import image from "../assets/img/BG.png";
 import { CiSearch } from "react-icons/ci";
 import { VscSettings } from "react-icons/vsc";
-import { IoIosArrowDown } from "react-icons/io";
 import joiner3 from "../assets/img/image3.png";
 import joiner2 from "../assets/img/image2.png";
 import joiner1 from "../assets/img/image1.png";
 import Calendar from "./calander";
+import { Link } from "react-router-dom";
 
 const Tradecomp = () => {
   const events = [
@@ -28,7 +28,7 @@ const Tradecomp = () => {
               <input
                 type="search"
                 placeholder="Search in Dashboard..."
-                className="outline-none font-semibold font-myFont"
+                className="outline-none font-semibold font-myFont w-full"
               />
               {/* <IoIosArrowDown className="ml-20" /> */}
             </div>
@@ -44,9 +44,9 @@ const Tradecomp = () => {
         <div className="bg-red-30 p-4 w-[70%] mr-10 ">
           <div className="flex justify-between mb-10">
             <p className="font-semibold text-Blue font-myFont">Booths List</p>
-            <button className="text-blue-600 font-semibold hover:underline underline-offset-2">
+            <Link to="/list" className="text-blue-600 font-semibold hover:underline underline-offset-2 cursor-pointer">
               View All
-            </button>
+            </Link>
           </div>
           <div className="bg-White rounded-2xl mt-4  h-20 ">
             <div className="mx-3  pt-3 flex justify-between items-center">

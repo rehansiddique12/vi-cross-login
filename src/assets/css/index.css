@@ -15,7 +15,12 @@
 
      --color-Gray: #686677;
 }
-/* 
+
+
+.hide-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
 
 
 

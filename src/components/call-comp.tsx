@@ -13,7 +13,7 @@ import { IoVideocamOffOutline } from "react-icons/io5";
 const Callcomp = () => {
   return (
     <div className="bg-Background w-full h-screen flex flex-col justify-between">
-      <nav className="mx-4 pt-4">
+      <nav className="mx-10 pt-4">
         <div className="flex justify-between items-center">
           <p className="text-Blue text-3xl font-bold font-myFont">
             Directly Conversation
@@ -24,7 +24,7 @@ const Callcomp = () => {
               <input
                 type="search"
                 placeholder="Search in Dashboard..."
-                className="outline-none font-semibold font-myFont"
+                className="outline-none font-semibold font-myFont w-full"
               />
             </div>
             <div className="bg-White rounded-lg p-2 relative">

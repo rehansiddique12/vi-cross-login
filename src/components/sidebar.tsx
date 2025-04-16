@@ -1,43 +1,60 @@
-
-import logo from "../assets/img/whitelogo.png"
-import { FiBox } from "react-icons/fi";
-import { IoChatboxEllipsesOutline } from "react-icons/io5";
-import { CiGrid41 } from "react-icons/ci";
-import { Link } from "react-router-dom";
-
+import { sidebar } from "../lib/constants";
+import logo from "../assets/img/whitelogo.png";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
   return (
     <div className="bg-white h-screen">
-        
-            <div className="">
-              <div className="">
-                <div className="bg-Blue h-screen  ">
-                    <div className="mx-4 flex flex-col justify-center items-center pt-16">
-                    <img src={logo} alt="" className="h-20  "/>
-                    <Link to= "/trads" className="w-full bg-White p-4 rounded-lg flex r items-center gap-2 mt-10 text-Blue hover:bg-Blue hover:text-White border-2 border-White" >
-                    <CiGrid41  className="size-7 "/>
-                        <p className="font-bold font-myFont text-lg ">Trade Booths</p>
-                    </Link>
-
-                    <Link to="/call" className="w-full bg-White p-4 rounded-lg flex r items-center gap-2 mt-5 text-Blue hover:bg-Blue hover:text-White border-2 border-White" >
-                    <IoChatboxEllipsesOutline  className="size-7 "/>
-                        <p className="font-bold font-myFont text-lg ">Support</p>
-                    </Link>
-                    <button className="w-full bg-White  text-Blue hover:bg-Blue hover:text-White  p-4 rounded-lg flex  items-center gap-2 mt-5 mx-8 hover:border-2" >
-                    <FiBox className="size-7 "/>
-                        <p className="font-bold font-myFont text-lg ">Trade Booths List</p>
-                    </button>
-
-                    
-                    </div>
-                </div>
+      <div className="">
+        <div className="">
+          {isOpen ? (
+            <div className="bg-Blue h-screen">
+              <div className="flex justify-end mr-5 pt-5 bg-Blue">
+                <IoIosArrowBack
+                  className="text-White size-5 cursor-pointer "
+                  onClick={() => setIsOpen(!isOpen)}
+                />
+              </div>
+              <div className="mx-8 flex flex-col justify-center items-center pt-16">
+                <Link to="/">
+                  <img src={logo} className="h-18" alt="logo" />
+                </Link>
+                {sidebar.map((item) => (
+                  <Link
+                    to={item.url}
+                    className={`w-full p-3 mr-7 ml-5 rounded-lg flex items-center gap-2 mt-10 ${
+                      location.pathname === item.url
+                        ? "text-Blue"
+                        : "text-White"
+                    } ${
+                      location.pathname === item.url
+                        ? "bg-White"
+                        : "bg-transparent"
+                    }`}
+                  >
+                    <item.icon className="size-7 " />
+                    <p className="font-bold font-myFont text-lg ">
+                      {item.title}
+                    </p>
+                  </Link>
+                ))}
               </div>
             </div>
-        
-        
+          ) : (
+            <div className="flex justify-end mr-5 bg-Blue h-screen pt-5"  onClick={() => setIsOpen(!isOpen)}>
+              <IoIosArrowForward className="text-White size-5 cursor-pointer"/>
+            </div>
+          )}
+          
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

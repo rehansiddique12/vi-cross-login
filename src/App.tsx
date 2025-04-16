@@ -5,9 +5,11 @@ import Signup from "./pages/signup"
 import Forget from "./pages/forget"
 import Confirm from "./pages/confirm"
 import { Route, Routes } from "react-router-dom"
-
 import Trades from "./pages/trades"
 import Call from "./pages/call"
+import List from "./pages/list"
+import Laravelpage from "./pages/laravelpage"
+
 
 
 
@@ -22,6 +24,8 @@ const App = () => {
       <Route path="/Confirmpassword" element={<Confirm/>}/>
       <Route path="/trads" element={<Trades/>}/>
       <Route path="/call" element={<Call/>}/>
+      <Route path="/list" element={<List/>}/>
+      <Route path="/laravel" element={<Laravelpage />}/>
     </Routes>
   )
 }

@@ -112,10 +112,18 @@ export default function Calendar({
     );
   };
 
- 
+  // Helper function to check if a date is today
+  const isToday = (date: Date) => {
+    const today = new Date();
+    return (
+      date.getDate() === today.getDate() &&
+      date.getMonth() === today.getMonth() &&
+      date.getFullYear() === today.getFullYear()
+    );
+  };
 
   return (
-    <div className="w-full max-w-md mx-auto bg-white rounded-3xl p-5 shadow-sm">
+    <div className="w-full max-w-md mx-auto bg-white rounded-3xl p-5 shadow-sm h-[calc(100vh-594px)] overflow-hidden">
       <div className="flex justify-between items-center mb-5">
         <h2 className="text-2xl font-bold text-gray-800">
           {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
@@ -144,18 +152,19 @@ export default function Calendar({
             {day}
           </div>
         ))}
-      
+
         {days.map((day, index) => {
           const dateEvents = getEventsForDate(day.date);
 
           return (
-              <div className="bg-red">
-                <div
+            <div className="bg-red">
+              <div
                 key={index}
                 className={`
                 h-10 flex flex-col items-center justify-center rounded-xl
-                border border-gray-100 bg-white
+                border border-gray-100 bg-white cursor-pointer
                 ${day.isCurrentMonth ? "text-gray-700" : "text-gray-400"}
+                ${isToday(day.date) ? "border-2 border-blue-500" : ""}
               `}
               >
                 <span className="text-lg">
@@ -173,7 +182,7 @@ export default function Calendar({
                   </div>
                 )}
               </div>
-              </div>
+            </div>
           );
         })}
       </div>
