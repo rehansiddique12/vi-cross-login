@@ -6,7 +6,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
+  
   const location = useLocation();
   return (
     <div className="bg-white h-screen">
