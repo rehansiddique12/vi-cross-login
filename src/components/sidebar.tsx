@@ -22,7 +22,7 @@ const Sidebar = () => {
                 />
               </div>
               <div className="mx-8 flex flex-col justify-center items-center pt-16">
-                <Link to="/">
+                <Link to="https://vi-cross-landing-page-v1.vercel.app/">
                   <img src={logo} className="h-18" alt="logo" />
                 </Link>
                 {sidebar.map((item) => (

@@ -11,11 +11,11 @@ import { Route, Routes } from "react-router-dom";
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Signup />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/otp" element={<Otp />} />
       <Route path="/call" element={<Call />} />
       <Route path="/list" element={<List />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
       <Route path="/trads" element={<Trades />} />
       <Route path="/forget" element={<Forget />} />
       <Route path="/Confirmpassword" element={<Confirm />} />
