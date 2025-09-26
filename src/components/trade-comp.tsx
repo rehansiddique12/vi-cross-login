@@ -30,7 +30,6 @@ const Tradecomp = () => {
                 placeholder="Search in Dashboard..."
                 className="outline-none font-semibold font-myFont w-full"
               />
-              {/* <IoIosArrowDown className="ml-20" /> */}
             </div>
             <div className="bg-White rounded-lg p-2">
               <VscSettings className="w-7 h-7" />
@@ -44,7 +43,10 @@ const Tradecomp = () => {
         <div className="bg-red-30 p-4 w-[70%] mr-10 ">
           <div className="flex justify-between mb-10">
             <p className="font-semibold text-Blue font-myFont">Booths List</p>
-            <Link to="/list" className="text-blue-600 font-semibold hover:underline underline-offset-2 cursor-pointer">
+            <Link
+              to="/list"
+              className="text-blue-600 font-semibold hover:underline underline-offset-2 cursor-pointer"
+            >
               View All
             </Link>
           </div>
@@ -88,9 +90,7 @@ const Tradecomp = () => {
         <div className="bg-transparent rounded-2xl shadow-md gap-5 w-[435px] h-[325px]">
           <Calendar initialDate={new Date(2024, 0, 1)} events={events} />
         </div>
-       
       </div>
-     
     </div>
   );
 };

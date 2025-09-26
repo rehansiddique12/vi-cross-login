@@ -1,14 +1,13 @@
-import Callcomp from "../components/call-comp"
-import Sidebar from "../components/sidebar"
-
+import Callcomp from "../components/call-comp";
+import Sidebar from "../components/sidebar";
 
 const Call = () => {
   return (
     <div className="flex">
-    <Sidebar/>
-    <Callcomp/>
+      <Sidebar />
+      <Callcomp />
     </div>
-  )
-}
+  );
+};
 
-export default Call
+export default Call;

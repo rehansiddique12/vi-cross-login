@@ -40,7 +40,11 @@ const Callcomp = () => {
 
       <div className=" w-full h-[90%] flex px-6">
         <div className=" w-full relative flex justify-center items-center">
-          <img src={call} alt="" className="w-full h-full object-fill drop-shadow-xl" />
+          <img
+            src={call}
+            alt=""
+            className="w-full h-full object-fill drop-shadow-xl"
+          />
           <div className="absolute bottom-10 flex gap-3.5 mb-10">
             <div className="bg-White h-14 w-16 rounded-2xl text- flex justify-center items-center mt-2 ">
               <AiOutlineAudioMuted className="size-8 " />
@@ -87,8 +91,7 @@ const Callcomp = () => {
                   </p>
                   <div className="bg-Background h-[65px] w-[255px] rounded-b-4xl rounded-l-4xl">
                     <p className="text-Blue font-smbold font-myFont text-center my-2 ">
-                    Yes, VR is generally safe
-                    when used properly.
+                      Yes, VR is generally safe when used properly.
                     </p>
                   </div>
                 </div>
@@ -119,11 +122,9 @@ const Callcomp = () => {
               </div>
             </div>
 
-
             <fieldset className="w-full border-t mt-5 border-gray-400 text-center">
               <legend className="px-2 text-[15px]">Monday, 23 Jan 2024</legend>
             </fieldset>
-
 
             <div className="relative flex w-full">
               <div className="flex justify-between w-full mt-4">
@@ -134,8 +135,7 @@ const Callcomp = () => {
                   </p>
                   <div className="bg-Background h-[65px] w-[255px] rounded-b-4xl rounded-l-4xl">
                     <p className="text-Blue font-smbold font-myFont text-center my-2 ">
-                    Yes, VR is generally safe
-                    when used properly.
+                      Yes, VR is generally safe when used properly.
                     </p>
                   </div>
                 </div>
@@ -145,17 +145,20 @@ const Callcomp = () => {
               </div>
               <img src={callgirl} alt="" className="relative h-14 w-14" />
             </div>
-        <div className="mx-10 mt-40 drop-shadow-xl ">
-           <div className=" flex w-full h-14 bg-[#F3F6FF] rounded-2xl px-5 justify-between">
-           <input type="text" name=""
-            placeholder="Enter Here"
-            className="w-full h-full  outline-none" />
-           <div className="flex items-center gap-5">
-           <FaMicrophone className="text-Gray hover:text-Blue hover:size-6" />
-           <BsTelegram className="size-8" />
-           </div>
-           </div>
-        </div>
+            <div className="mx-10 mt-40 drop-shadow-xl ">
+              <div className=" flex w-full h-14 bg-[#F3F6FF] rounded-2xl px-5 justify-between">
+                <input
+                  type="text"
+                  name=""
+                  placeholder="Enter Here"
+                  className="w-full h-full  outline-none"
+                />
+                <div className="flex items-center gap-5">
+                  <FaMicrophone className="text-Gray hover:text-Blue hover:size-6" />
+                  <BsTelegram className="size-8" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

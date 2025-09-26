@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
-  
+
   const location = useLocation();
   return (
     <div className="bg-white h-screen">
@@ -47,11 +47,13 @@ const Sidebar = () => {
               </div>
             </div>
           ) : (
-            <div className="flex justify-end mr-5 bg-Blue h-screen pt-5"  onClick={() => setIsOpen(!isOpen)}>
-              <IoIosArrowForward className="text-White size-5 cursor-pointer"/>
+            <div
+              className="flex justify-end mr-5 bg-Blue h-screen pt-5"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <IoIosArrowForward className="text-White size-5 cursor-pointer" />
             </div>
           )}
-          
         </div>
       </div>
     </div>

@@ -33,25 +33,19 @@ export default function Calendar({
     const year = date.getFullYear();
     const month = date.getMonth();
 
-    // First day of the month
     const firstDay = new Date(year, month, 1);
-    // Last day of the month
+
     const lastDay = new Date(year, month + 1, 0);
 
-    // Get the day of the week for the first day (0 = Sunday, 1 = Monday, etc.)
     let firstDayOfWeek = firstDay.getDay() - 1;
-    if (firstDayOfWeek === -1) firstDayOfWeek = 6; // Convert Sunday from 0 to 6
+    if (firstDayOfWeek === -1) firstDayOfWeek = 6;
 
-    // Calculate days from previous month to show
     const daysFromPrevMonth = firstDayOfWeek;
 
-    // Calculate total days to show (including days from prev/next months)
-    const totalDays = 30; // 6 rows of 7 days
+    const totalDays = 30;
 
-    // Generate calendar days
     const days = [];
 
-    // Add days from previous month
     const prevMonth = new Date(year, month - 1, 0);
     const prevMonthDays = prevMonth.getDate();
 
@@ -67,7 +61,6 @@ export default function Calendar({
       });
     }
 
-    // Add days from current month
     for (let i = 1; i <= lastDay.getDate(); i++) {
       days.push({
         date: new Date(year, month, i),
@@ -76,7 +69,6 @@ export default function Calendar({
       });
     }
 
-    // Add days from next month
     const remainingDays = totalDays - days.length;
     for (let i = 1; i <= remainingDays; i++) {
       days.push({
@@ -112,7 +104,6 @@ export default function Calendar({
     );
   };
 
-  // Helper function to check if a date is today
   const isToday = (date: Date) => {
     const today = new Date();
     return (

@@ -47,20 +47,18 @@ const Listcomp = () => {
         </button>
       </div>
 
-
       <div className="mx-9 px-10 mt-5 bg-White rounded-2xl flex py-3 text-Blue font-bold font-myFont ">
-          <div className="w-[25%]">
-            <p>Company Name</p>
-          </div>
-          <div className="w-[50%]">
-            <p>Location</p>
-          </div>
-          <div className="w-[25%]">
-            <p>Company size</p>
-          </div>
+        <div className="w-[25%]">
+          <p>Company Name</p>
         </div>
+        <div className="w-[50%]">
+          <p>Location</p>
+        </div>
+        <div className="w-[25%]">
+          <p>Company size</p>
+        </div>
+      </div>
       <div className="px-10  h-[90%] scroll-auto overflow-scroll pb-15 hide-scrollbar ">
-       
         {filteredData.map((p, index) => (
           <div
             className={`${index % 2 === 0 ? "bg-transparent mt-3" : "bg-white"}

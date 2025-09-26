@@ -4,7 +4,6 @@ interface MaxWidthWrapperProps {
   className?: string;
   children: React.ReactNode;
 }
-
 const MaxWidthWrapper = ({ className, children }: MaxWidthWrapperProps) => {
   return (
     <div
