@@ -48,7 +48,7 @@ const Confirm = () => {
       passwordSchema.parse({ password, confirmPassword });
       setErrors({ password: "", confirmPassword: "" });
       console.log("Password reset successful!");
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       if (err instanceof z.ZodError) {
         const formattedErrors = err.flatten().fieldErrors;
@@ -140,7 +140,7 @@ const Confirm = () => {
               </button>
 
               <div className="text-center mt-4 font-smbold flex items-center gap-2 hover:gap-4 text-Gray hover:text-Blue">
-                <Link to="/login" className="font-myFont font-bold">
+                <Link to="/" className="font-myFont font-bold">
                   Back to Login
                 </Link>
                 <div>

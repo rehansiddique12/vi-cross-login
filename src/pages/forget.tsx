@@ -80,7 +80,7 @@ const Forget = () => {
               </button>
 
               <div className="text-center mt-4 font-smbold flex items-center gap-2 hover:gap-4 text-Gray hover:text-Blue">
-                <Link to="/login" className="font-myFont font-bold">
+                <Link to="/" className="font-myFont font-bold">
                   Back to Login
                 </Link>
                 <div>
